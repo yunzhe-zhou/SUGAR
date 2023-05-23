@@ -1,7 +1,6 @@
 # Testing Directed Acyclic Graph via Structural, Supervised and Generative Adversarial Learning
 
-This repository contains the implementation for the paper "Testing Directed Acyclic Graph via Structural, Supervised and Generative Adversarial Learning
-" in Python. 
+This repository contains the implementation for the paper [Testing Directed Acyclic Graph via Structural, Supervised and Generative Adversarial Learning](https://arxiv.org/pdf/2106.01474.pdf) in Python. 
 
 ## Summary of the paper
 
