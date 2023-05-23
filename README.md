@@ -29,37 +29,35 @@ In this article, we propose a new hypothesis testing method for directed acyclic
 
 
 ## File Overview
-- `src/`: This folder contains all python codes used in numerical simulations and real data analysis.
-  - `main.py` is the main function to reproduce the simulation results in section 5 of the paper.
-  - `main_real.py` is the main function to implements the real data analysis in section 6 of the paper.
-  - `main_lrt.R` is to implement the methods in ["Likelihood ratio tests for a large directed acyclic graph"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7508303/)
+- `SUGAR/`: This module contains all python function used in numerical simulations and real data analysis.
   - `nonlinear_learning.py` is used for structural learning of the graphs. (Refers to https://github.com/xunzheng/notears)
   - `inference.py` contains the major functions to implement DAG structure learning and p value calculation for simulations.
   - `infer_utils.py` contains the helper functions for p value calculation in simulations.
   - `real_infer.py` contains the major functions to implement DAG structure learning and p value calculation for the real data analysis.
   - `sim_gen.py` contains the utils functions to generate data for simulations and is sourced to implement the LRT.
-  - `plot.py` contains the functions to load test results and draw plots for the simulations.
   - `synthetic.py` contains the helper functions to generate the graph matrix for simulations.
   - `utils_tools.py` provides the helper function for the GAN with Sinkhorn divergence.
   - `utils.py` provides the other utility functions.
 - `data/`: This folder where the output results and the dataset should be put.
   - `module_name.npy` records the information of the electrode names. 
   - `data_process.R` implements the preprocessing of the raw real dataset.
-
+- `main.py` is the main function to reproduce the simulation results in section 5 of the paper.
+- `main_real.py` is the main function to implements the real data analysis in section 6 of the paper.
+- `main_lrt.R` is to implement the methods in ["Likelihood ratio tests for a large directed acyclic graph"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7508303/)
+- `plot.py` is used to load test results and draw plots for the simulations.
 ## Workflow
 
 - Follow the steps below in order to reproduce the simulations of this paper:
-    -  Navigate to the `src` folder.
     -  Run `main.py` to implement SUGAR and DRT for the simulations.
     -  Run `main_lrt.R` to implement LRT for the simulations.
     -  Run `plot.py` to reproduce the figures of the sensitivity analysis.
 
-- We also provide a toy example in `scr/example.ipynb` which is feasible to run on a local computer and reproduces the case of $\delta=0.5$ in Figure 2 of the main paper. It is tested to take around 12 hours to run on a standard single CPU machine. If you are out of patience, you can also reduce the number of repetitions in the simulations to speed it up.
+- We also provide a toy example in `example.ipynb` which is feasible to run on a local computer and reproduces the case of $\delta=0.5$ in Figure 2 of the main paper. It is tested to take around 12 hours to run on a standard single CPU machine. If you are out of patience, you can also reduce the number of repetitions in the simulations to speed it up.
 
 - Follow the steps below in order to reproduce the real data analysis of this paper:
     -  Put the HCP data into the "data" folder. This dataset can be requested at https://www.humanconnectome.org/study/hcp-young-adult after signing the data user agreement.
     -  Navigate to the `data` folder and run `data_process.R` to preprocess the dataset.
-    -  Navigate to the `src` folder and run `main_real.py` to implement the DAG testing for HCP data.
+    -  Run `main_real.py` to implement the DAG testing for HCP data.
 
 ## Data Description
 
